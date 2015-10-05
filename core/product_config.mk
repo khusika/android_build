@@ -179,9 +179,9 @@ include $(BUILD_SYSTEM)/node_fns.mk
 include $(BUILD_SYSTEM)/product.mk
 include $(BUILD_SYSTEM)/device.mk
 
-# A CM build needs only the CM product makefiles.
-ifneq ($(CM_BUILD),)
-  all_product_configs := $(shell find device -path "*/$(CM_BUILD)/cm.mk")
+# A XOPLAX build needs only the XOPLAX product makefiles.
+ifneq ($(XOPLAX_BUILD),)
+  all_product_configs := $(shell find device -path "*/$(XOPLAX_BUILD)/xoplax.mk")
 else
   ifneq ($(strip $(TARGET_BUILD_APPS)),)
   # An unbundled app build needs only the core product makefiles.
@@ -194,7 +194,7 @@ else
   endif # TARGET_BUILD_APPS
 endif # CM_BUILD
 
-ifeq ($(CM_BUILD),)
+ifeq ($(XOPLAX_BUILD),)
 # Find the product config makefile for the current product.
 # all_product_configs consists items like:
 # <product_name>:<path_to_the_product_makefile>
