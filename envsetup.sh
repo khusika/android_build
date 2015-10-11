@@ -560,7 +560,7 @@ function breakfast()
             if [ -z "$variant" ]; then
                 variant="userdebug"
             fi
-            lunch xoplax_$target-$variant
+            lunch cm_$target-$variant
         fi
     fi
     return $?

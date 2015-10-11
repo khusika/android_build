@@ -104,6 +104,9 @@ include $(BUILD_SYSTEM)/qcom_utils.mk
 # Bring in Mediatek helper macros too
 include $(BUILD_SYSTEM)/mtk_utils.mk
 
+# Bring in Marvell helper macros too
+include $(BUILD_SYSTEM)/mrvl_utils.mk
+
 # Include the google-specific config
 -include vendor/google/build/config.mk
 
