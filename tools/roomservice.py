@@ -106,7 +106,7 @@ def iterate_manifests(check_all):
     if check_all:
         for file in os.listdir(local_manifest_dir):
 		if file.endswith('.xml'):
-                files.append(os.path.join(local_manifest_dir, file))
+                  files.append(os.path.join(local_manifest_dir, file))
     files.append('.repo/manifest.xml')
     for file in files:
         try:
@@ -259,7 +259,7 @@ def create_dependency_manifest(dependencies):
             manifest = append_to_manifest(project)
             write_to_manifest(manifest)
             projects.append(target_path)
-            os.system("repo sync -f --no-clone-bundle %s" % target_path)
+            os.system("repo sync --force-sync %s" % target_path)
             fetch_extra_dependencies(target_path)
 
 def fetch_dependencies(device):
