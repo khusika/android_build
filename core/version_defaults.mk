@@ -37,6 +37,11 @@ ifneq "" "$(INTERNAL_BUILD_ID_MAKEFILE)"
   include $(INTERNAL_BUILD_ID_MAKEFILE)
 endif
 
+INTERNAL_CODENAME_MAKEFILE := $(wildcard $(BUILD_SYSTEM)/codename.mk)
+ifeq "" "$(XOS_CODENAME)"
+   include $(INTERNAL_CODENAME_MAKEFILE)
+endif
+
 ifeq "" "$(PLATFORM_VERSION)"
   # This is the canonical definition of the platform version,
   # which is the version that we reveal to the end user.
