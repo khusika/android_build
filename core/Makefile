@@ -1735,14 +1735,14 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-CM_TARGET_PACKAGE := $(PRODUCT_OUT)/xos-$(XOS_VERSION)-$(TARGET_DEVICE)-$(shell date +%Y%m%d)-$(XOS_CODENAME).zip
+XOPLAX_TARGET_PACKAGE := $(PRODUCT_OUT)/xos-$(XOS_VERSION)-$(TARGET_DEVICE)-$(shell date +%Y%m%d)-$(XOS_CODENAME).zip
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CM_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(CM_TARGET_PACKAGE) > $(CM_TARGET_PACKAGE).md5sum
-	@echo -e ${CL_CYN}"Package Complete: $(CM_TARGET_PACKAGE)"${CL_RST}
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(XOPLAX_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(XOPLAX_TARGET_PACKAGE) > $(XOPLAX_TARGET_PACKAGE).md5sum
+	@echo -e ${CL_CYN}"Package Complete: $(XOPLAX_TARGET_PACKAGE)"${CL_RST}
 
 # -----------------------------------------------------------------
 # The factory package
