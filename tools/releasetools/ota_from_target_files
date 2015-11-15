@@ -596,6 +596,16 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Unmount("/system")
 
   system_progress = 0.75
+  script.Print(" ")
+  script.Print(" __   __  _____   _____  ")
+  script.Print(" \ \ / / |  _  | /  ___| ")
+  script.Print("  \ V /  | | | | \ `--.  ")
+  script.Print("  /   \  | | | |  `--. \ ")
+  script.Print(" / /^\ \ \ \_/ / /\__/ / ")
+  script.Print(" \/   \/  \___/  \____/  ")
+  script.Print(" ")
+  script.Print("    os.xoplaxdev.org     ")
+  script.Print(" ")
 
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1

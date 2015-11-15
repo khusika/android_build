@@ -514,7 +514,7 @@ function print_lunch_menu()
         i=$(($i+1))
     done | column
 
-    if [ "z${CM_DEVICES_ONLY}" != "z" ]; then
+    if [ "z${XOPLAX_DEVICES_ONLY}" != "z" ]; then
        echo "... and don't forget the bacon!"
     fi
 
@@ -610,7 +610,7 @@ function lunch()
     check_product $product
     if [ $? -ne 0 ]
     then
-        # if we can't find a product, try to grab it off the CM github
+        # if we can't find a product, try to grab it off the XOPLAX github
         T=$(gettop)
         pushd $T > /dev/null
         build/tools/roomservice.py $product
@@ -738,7 +738,7 @@ function eat()
             done
             echo "Device Found.."
         fi
-    if (adb shell getprop ro.cm.device | grep -q "XOPLAX_BUILD");
+    if (adb shell getprop ro.xos.device | grep -q "XOPLAX_BUILD");
     then
         # if adbd isn't root we can't write to /cache/recovery/
         adb root
@@ -1982,7 +1982,7 @@ function installboot()
     sleep 1
     adb wait-for-online shell mount /system 2>&1 > /dev/null
     adb wait-for-online remount
-    if (adb shell getprop ro.cm.device | grep -q "$XOPLAX_BUILD");
+    if (adb shell getprop ro.xos.device | grep -q "$XOPLAX_BUILD");
     then
         adb push $OUT/boot.img /cache/
         for i in $OUT/system/lib/modules/*;
@@ -2027,7 +2027,7 @@ function installrecovery()
     sleep 1
     adb wait-for-online shell mount /system 2>&1 >> /dev/null
     adb wait-for-online remount
-    if (adb shell getprop ro.cm.device | grep -q "$XOPLAX_BUILD");
+    if (adb shell getprop ro.xos.device | grep -q "$XOPLAX_BUILD");
     then
         adb push $OUT/recovery.img /cache/
         adb shell dd if=/cache/recovery.img of=$PARTITION
@@ -2413,7 +2413,7 @@ function dopush()
         echo "Device Found."
     fi
 
-    if (adb shell getprop ro.cm.device | grep -q "$XOPLAX_BUILD") || [ "$FORCE_PUSH" == "true" ];
+    if (adb shell getprop ro.xos.device | grep -q "$XOPLAX_BUILD") || [ "$FORCE_PUSH" == "true" ];
     then
     # retrieve IP and PORT info if we're using a TCP connection
     TCPIPPORT=$(adb devices | egrep '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+[^0-9]+' \
