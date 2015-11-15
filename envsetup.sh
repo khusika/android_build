@@ -494,16 +494,24 @@ add_lunch_combo aosp_x86_64-eng
 function print_lunch_menu()
 {
     local uname=$(uname)
+    echo " __  __     ______     ______   __         ______     __  __    "
+    echo "/\_\_\_\   /\  __ \   /\  == \ /\ \       /\  __ \   /\_\_\_\   "
+    echo "\/_/\_\/_  \ \ \/\ \  \ \  _-/ \ \ \____  \ \  __ \  \/_/\_\/_  "
+    echo "  /\_\/\_\  \ \_____\  \ \_\    \ \_____\  \ \_\ \_\   /\_\/\_\ "
+    echo "  \/_/\/_/   \/_____/   \/_/     \/_____/   \/_/\/_/   \/_/\/_/ "
     echo
-    echo "You're building on" $uname
-    if [ "$(uname)" = "Darwin" ] ; then
-       echo "  (ohai, koush!)"
-    fi
+    echo "                      ______     ______                         "
+    echo "                     /\  __ \   /\  ___\                        "
+    echo "                     \ \ \/\ \  \ \___  \                       "
+    echo "                      \ \_____\  \/\_____\                      "
+    echo "                       \/_____/   \/_____/                      "
+    echo
+    echo "Welcome to Xoplax OS builder!"
     echo
     if [ "z${XOPLAX_DEVICES_ONLY}" != "z" ]; then
-       echo "Breakfast menu... pick a combo:"
+       echo "What device would you like to build?"
     else
-       echo "Lunch menu... pick a combo:"
+       echo "What device would you like to build, builder?"
     fi
 
     local i=1
@@ -515,7 +523,7 @@ function print_lunch_menu()
     done | column
 
     if [ "z${XOPLAX_DEVICES_ONLY}" != "z" ]; then
-       echo "... and don't forget the bacon!"
+       echo "... and don't forget to check free space before build"
     fi
 
     echo
@@ -577,7 +585,7 @@ function lunch()
         answer=$1
     else
         print_lunch_menu
-        echo -n "Which would you like? [aosp_arm-eng] "
+        echo -n "Please select the device! [1] "
         read answer
     fi
 
@@ -654,6 +662,12 @@ function lunch()
     set_stuff_for_environment
     printconfig
 }
+
+function build()
+{
+    brunch
+}
+    
 
 # Tab completion for lunch.
 function _lunch()
