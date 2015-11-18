@@ -1745,22 +1745,22 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(XOPLAX_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(XOPLAX_TARGET_PACKAGE) > $(XOPLAX_TARGET_PACKAGE).md5sum
-        @echo -e ${CL_GRN}"======================-Package Complete-========================"${CL_RST}
-        @echo -e ${CL_RED}" __  __     ______     ______   __         ______     __  __    "${CL_RST}
-        @echo -e ${CL_RED}"/\_\_\_\   /\  __ \   /\  == \ /\ \       /\  __ \   /\_\_\_\   "${CL_RST}
-        @echo -e ${CL_RED}"\/_/\_\/_  \ \ \/\ \  \ \  _-/ \ \ \____  \ \  __ \  \/_/\_\/_  "${CL_RST}
-        @echo -e ${CL_RED}"  /\_\/\_\  \ \_____\  \ \_\    \ \_____\  \ \_\ \_\   /\_\/\_\ "${CL_RST}
-        @echo -e ${CL_RED}"  \/_/\/_/   \/_____/   \/_/     \/_____/   \/_/\/_/   \/_/\/_/ "${CL_RST}
-        @echo -e ""
-        @echo -e ${CL_WHT}"                      ______     ______                         "${CL_RST}
-        @echo -e ${CL_WHT}"                     /\  __ \   /\  ___\                        "${CL_RST}
-        @echo -e ${CL_WHT}"                     \ \ \/\ \  \ \___  \                       "${CL_RST}
-        @echo -e ${CL_WHT}"                      \ \_____\  \/\_____\                      "${CL_RST}
-        @echo -e ${CL_WHT}"                       \/_____/   \/_____/                      "${CL_RST}
-        @echo -e ""
-        @echo -e ${CL_CYN}"                 -Make Your Device OOT Everyday-                "${CL_RST}
-        @echo -e ""
-        @echo -e ${CL_GRN}"======================-Package Complete-========================"${CL_RST}
+	@echo -e ${CL_GRN}"======================-Package Complete-========================"${CL_RST}
+	@echo -e ${CL_RED}" __  __     ______     ______   __         ______     __  __    "${CL_RST}
+	@echo -e ${CL_RED}"/\_\_\_\   /\  __ \   /\  == \ /\ \       /\  __ \   /\_\_\_\   "${CL_RST}
+	@echo -e ${CL_RED}"\/_/\_\/_  \ \ \/\ \  \ \  _-/ \ \ \____  \ \  __ \  \/_/\_\/_  "${CL_RST}
+	@echo -e ${CL_RED}"  /\_\/\_\  \ \_____\  \ \_\    \ \_____\  \ \_\ \_\   /\_\/\_\ "${CL_RST}
+	@echo -e ${CL_RED}"  \/_/\/_/   \/_____/   \/_/     \/_____/   \/_/\/_/   \/_/\/_/ "${CL_RST}
+	@echo -e ""
+	@echo -e ${CL_WHT}"                      ______     ______                         "${CL_RST}
+	@echo -e ${CL_WHT}"                     /\  __ \   /\  ___\                        "${CL_RST}
+	@echo -e ${CL_WHT}"                     \ \ \/\ \  \ \___  \                       "${CL_RST}
+	@echo -e ${CL_WHT}"                      \ \_____\  \/\_____\                      "${CL_RST}
+	@echo -e ${CL_WHT}"                       \/_____/   \/_____/                      "${CL_RST}
+	@echo -e ""
+	@echo -e ${CL_CYN}"                 -Make Your Device OOT Everyday-                "${CL_RST}
+	@echo -e ""
+	@echo -e ${CL_GRN}"======================-Package Complete-========================"${CL_RST}
 
 # -----------------------------------------------------------------
 # The factory package
