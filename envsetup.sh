@@ -507,6 +507,12 @@ function print_lunch_menu()
     echo "                       \/_____/   \/_____/                      "
     echo
     echo "Welcome to Xoplax OS builder!"
+        whoami=$(whoami)
+    if [ "${whoami}" != "jenkins" ]; then
+        echo "Hi, ${whoami}"
+    else
+        echo " Ohai, Yosef!"
+    fi
     echo
     if [ "z${XOPLAX_DEVICES_ONLY}" != "z" ]; then
        echo "What device would you like to build?"
