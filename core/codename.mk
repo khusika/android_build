@@ -19,4 +19,4 @@
 # (like "NOVEMBER_RAIN").  It must be a single and/or 2 word
 # capitalized by convention.
 
-export XOS_CODENAME=NOVEMBER_RAIN
+export XOS_CODENAME=CALIGO
