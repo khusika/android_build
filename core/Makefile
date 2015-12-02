@@ -1763,7 +1763,7 @@ bacon: otapackage
 	@echo -e ""
 	@echo -e ${CL_CYN}"Zip: "${CL_YLW} $(XOPLAX_TARGET_PACKAGE)	            ${CL_RST}
 	@echo -e ${CL_CYN}"MD5: "${CL_YLW}" `cat $(XOPLAX_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_RST}
-	@echo -e ${CL_CYN}"Size:"${CL_YLW}" `ls -lah $(PAC_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
+	@echo -e ${CL_CYN}"Size:"${CL_YLW}" `ls -lah $(XOPLAX_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
 	@echo -e ""
 	@echo -e $(CL_WHT}"Official Website: http://xoplaxdev.org"$(CL_RST}
 	@echo -e ${CL_GRN}"======================-Package Complete-========================"${CL_RST}
