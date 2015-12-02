@@ -10,6 +10,7 @@ ifneq ($(BUILD_WITH_COLORS),0)
   CL_MAG="\033[35m"
   CL_CYN="\033[36m"
   CL_WHT="\033[37m"
+  CL_RED2="\033[41m"
   CL_RST="\033[0m"
 endif
 
@@ -1745,12 +1746,12 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(XOPLAX_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(XOPLAX_TARGET_PACKAGE) > $(XOPLAX_TARGET_PACKAGE).md5sum
-	@echo -e ${CL_GRN}"======================-Package Complete-========================"${CL_RST}
-	@echo -e ${CL_RED}" __  __     ______     ______   __         ______     __  __    "${CL_RST}
-	@echo -e ${CL_RED}"/\_\_\_\   /\  __ \   /\  == \ /\ \       /\  __ \   /\_\_\_\   "${CL_RST}
-	@echo -e ${CL_RED}"\/_/\_\/_  \ \ \/\ \  \ \  _-/ \ \ \____  \ \  __ \  \/_/\_\/_  "${CL_RST}
-	@echo -e ${CL_RED}"  /\_\/\_\  \ \_____\  \ \_\    \ \_____\  \ \_\ \_\   /\_\/\_\ "${CL_RST}
-	@echo -e ${CL_RED}"  \/_/\/_/   \/_____/   \/_/     \/_____/   \/_/\/_/   \/_/\/_/ "${CL_RST}
+	@echo -e ${CL_GRN}"================================================================="${CL_RST}
+	@echo -e ${CL_RED2}" __  __     ______     ______   __         ______     __  __    "${CL_RST}
+	@echo -e ${CL_RED2}"/\_\_\_\   /\  __ \   /\  == \ /\ \       /\  __ \   /\_\_\_\   "${CL_RST}
+	@echo -e ${CL_RED2}"\/_/\_\/_  \ \ \/\ \  \ \  _-/ \ \ \____  \ \  __ \  \/_/\_\/_  "${CL_RST}
+	@echo -e ${CL_RED2}"  /\_\/\_\  \ \_____\  \ \_\    \ \_____\  \ \_\ \_\   /\_\/\_\ "${CL_RST}
+	@echo -e ${CL_RED2}"  \/_/\/_/   \/_____/   \/_/     \/_____/   \/_/\/_/   \/_/\/_/ "${CL_RST}
 	@echo -e ""
 	@echo -e ${CL_WHT}"                      ______     ______                         "${CL_RST}
 	@echo -e ${CL_WHT}"                     /\  __ \   /\  ___\                        "${CL_RST}
@@ -1760,6 +1761,11 @@ bacon: otapackage
 	@echo -e ""
 	@echo -e ${CL_CYN}"                 -Make Your Device OOT Everyday-                "${CL_RST}
 	@echo -e ""
+	@echo -e ${CL_CYN}"Zip: "${CL_YLW} $(XOPLAX_TARGET_PACKAGE)	            ${CL_RST}
+	@echo -e ${CL_CYN}"MD5: "${CL_YLW}" `cat $(XOPLAX_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_RST}
+	@echo -e ${CL_CYN}"Size:"${CL_YLW}" `ls -lah $(PAC_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
+	@echo -e ""
+	@echo -e $(CL_WHT}"Official Website: http://xoplaxdev.org"$(CL_RST}
 	@echo -e ${CL_GRN}"======================-Package Complete-========================"${CL_RST}
 
 # -----------------------------------------------------------------
