@@ -508,7 +508,7 @@ function print_lunch_menu()
     echo
     echo "Welcome to Xoplax OS builder!"
         whoami=$(whoami)
-    if [ "${whoami}" != "jenkins" ]; then
+    if [ "${whoami}" != "yosefadi" ]; then
         echo "Hi, ${whoami}"
     else
         echo " Ohai, Yosef!"
